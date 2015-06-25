@@ -446,7 +446,7 @@ init_expects(Exports, Options) ->
 gen_server(Func, Mod, Msg) ->
     Name = meck_util:proc_name(Mod),
     try gen_server:Func(Name, Msg)
-    catch exit:_Reason -> io:format("not_mocked, module=~p~n", [Mod]}) end.
+    catch exit:_Reason -> io:format("not_mocked, module=~p~n", [Mod]) end.
 
 -spec check_if_being_reloaded(#state{}) -> ok.
 check_if_being_reloaded(#state{reload = undefined}) ->
